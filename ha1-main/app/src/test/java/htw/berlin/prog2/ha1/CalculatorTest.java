@@ -43,7 +43,7 @@ class CalculatorTest {
     //TODO hier weitere Tests erstellen
 
     @Test
-    @DisplayName("should display result after adding two positive multi-digit numbers")
+    @DisplayName("should display result after multiple two positive multi-digit numbers")
     void testPositiveMultiplication() {
         Calculator calc = new Calculator();
 
@@ -57,5 +57,7 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+
 }
 
