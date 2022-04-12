@@ -58,6 +58,42 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName ("should display result after adding more than one dot")
+    void testDotKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressDotKey();
+        calc.pressDigitKey(2);
+        calc.pressDotKey();
+        calc.pressDigitKey(3);
+        String expected = "1.23";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
+    @Test
+    @DisplayName("should display result with ERROR")
+    void testDividingByZero() {
+        Calculator calc = new Calculator();
+
+
+        calc.pressDigitKey(1);
+
+        calc.pressBinaryOperationKey("/");
+
+        calc.pressDigitKey(0);
+        calc.pressEqualsKey();
+
+
+
+        String expected = "ERROR";
+        String actual = calc.readScreen();
+
+        assertEquals( expected, actual);
+    }
 
 }
 
